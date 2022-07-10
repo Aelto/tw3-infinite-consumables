@@ -14,8 +14,8 @@ The mod menu offers two sliders:
 
 # Installing
  - download the latest version of this mod
- - confirm you now have a zip archive with a folder named modIncreasedMaterialsRequirement in it
- - drop the modIncreasedMaterialsRequirement folder in your mods folder
- - confirm you now have a modIncreasedMaterialsRequirement folder in your mods folder
+ - confirm you now have a zip archive with two folders named `mod` and `bin` in it
+ - drop the folders in your game root directory
+ - confirm you now have a `modInfiniteConsumables` folder in your mods folder
  - open the script merger of your choice and start merging.
  - load a save, open the mod menu and apply the default preset, open the alchemy panel and confirm any potion recipe requires 15x more ingredients to brew.
