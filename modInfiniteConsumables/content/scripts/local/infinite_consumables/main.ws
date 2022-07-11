@@ -47,16 +47,25 @@ function WIC_getAlchemyRequirementsMultiplier(out recipe: SAlchemyRecipe): int {
 }
 
 function WIC_increaseAlchemyRequirements(out recipe: SAlchemyRecipe) {
+  var dm : CDefinitionsManagerAccessor;
+  var item_id : SItemUniqueId;
   var multiplier: int;
   var i: int;
 
   multiplier = WIC_requirementMultiplier();
+  dm = theGame.GetDefinitionsManager();
 
   if (!WIC_isRecipeForPotionOrOil(recipe)) {
     return;
   }
 
   for (i = 0; i < recipe.requiredIngredients.Size(); i += 1) {
+
+    // do not multiply potions or oils in recipes.
+    if (dm.IsItemOil(recipe.requiredIngredients[i].itemName) || dm.IsItemPotion(recipe.requiredIngredients[i].itemName)) {
+      continue;
+    }
+
     if (recipe.requiredIngredients[i].quantity < 0) {
       continue;
     }
